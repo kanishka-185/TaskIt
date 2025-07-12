@@ -41,7 +41,7 @@ const handleComplete = async () => {
     const newStatus = isCompleted ? 'No' : 'Yes'
     try {
         await axios.put(`${API_BASE}/${task._id}/gp`,{completed: newStatus},
-            {headers: getAuthHeaders}
+            {headers: getAuthHeaders()}
         )
         setIsCompleted(!isCompleted)
         onRefresh?.()
