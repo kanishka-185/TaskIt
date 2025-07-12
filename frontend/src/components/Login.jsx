@@ -23,7 +23,7 @@ const Login = ({onSubmit,onSwitchMode}) => {
         if(token){
             (async() => {
                 try {
-                    const {data} = await axios.get(`${url}/api/user/me`,{
+                    const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/me`,{
                         headers: {Authorization: `Bearer ${token}`},
                     })
                     if(data.success){
@@ -50,7 +50,7 @@ const Login = ({onSubmit,onSwitchMode}) => {
     
 
     try{
-        const {data} = await axios.post(`${url}/api/user/login`,formData)
+        const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/login`,formData)
         if(!data.token) throw new Error(data.message || "Login failed")
         localStorage.setItem("token",data.token)
         localStorage.setItem("userId",data.user.id)
