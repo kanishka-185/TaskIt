@@ -41,7 +41,7 @@ const CompletePage = () => {
 
           <p className={CT_CLASSES.subtitle}>
             {sortedCompletedTasks.length}{' '}task{sortedCompletedTasks.length !==1 && 's'}{' '}
-          marked as completed
+          are marked as completed
           </p>
         </div>
 
